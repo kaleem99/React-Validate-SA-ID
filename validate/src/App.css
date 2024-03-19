@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 30%;
+  height: 60vh;
+  margin: auto;
+  border-radius: 10px;
+}
+.SANAME {
+  color: #180d8b;
+}
+.card:hover {
+  box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2);
+}
+.ValidOrInvalid {
+  color: #0000ed;
+}
+.container {
+  padding: 2px 16px;
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  border: 1px groove #2f7848;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.SAFlag {
+  width: 280px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .SAFlag {
+    width: 90%;
+  }
+}
+
+/* MyForm.css */
+.my-form {
+  /* max-width: 400px; */
+  /* margin: 20px auto; */
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.my-form label {
+  margin-bottom: 5px;
+}
+
+.my-form input[type="text"],
+.my-form input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #180d8b;
+  color: white;
+  width: 90%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
