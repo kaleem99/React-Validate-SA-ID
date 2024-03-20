@@ -31,6 +31,28 @@ function isValidDate(date, month, year) {
     }
     return month >= 0 && month < 12 && date > 0 && date <= daysInMonth;
 }
+function isValidGender(IDNumber) {
+    var counter = 0;
+    var genderDigits = IDNumber.slice(6, 10);
+    if (genderDigits >= "0000" && genderDigits <= "4999") {
+        counter += 1;
+    }
+    else if (genderDigits >= "5000" && genderDigits <= "9999") {
+        counter += 1;
+    }
+    return counter === 1;
+}
+function valididateCitizenOrResident(IDNumber) {
+    var citizen = IDNumber.slice(10, 11);
+    var counter = 0;
+    if (citizen === "0") {
+        counter++;
+    }
+    else if (citizen === "1") {
+        counter++;
+    }
+    return counter === 1;
+}
 function ValidateID(IDNumber) {
     var counter = 0;
     var date = IDNumber.slice(0, 6);
@@ -46,10 +68,16 @@ function ValidateID(IDNumber) {
     if (isValidDate(d, m, y)) {
         counter++;
     }
+    if (isValidGender(IDNumber)) {
+        counter++;
+    }
+    if (valididateCitizenOrResident(IDNumber)) {
+        counter++;
+    }
     if (IDNumber[IDNumber.length - 3] === "1" ||
         IDNumber[IDNumber.length - 3] === "0") {
         counter++;
     }
-    return counter === 4;
+    return counter === 6;
 }
 exports.ValidateID = ValidateID;

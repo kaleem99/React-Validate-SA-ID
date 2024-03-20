@@ -35,7 +35,26 @@ function isValidDate(date: number, month: number, year: number): boolean {
 
   return month >= 0 && month < 12 && date > 0 && date <= daysInMonth;
 }
-
+function isValidGender(IDNumber: string): boolean {
+  let counter: number = 0;
+  const genderDigits: string = IDNumber.slice(6, 10);
+  if (genderDigits >= "0000" && genderDigits <= "4999") {
+    counter += 1;
+  } else if (genderDigits >= "5000" && genderDigits <= "9999") {
+    counter += 1;
+  }
+  return counter === 1;
+}
+function valididateCitizenOrResident(IDNumber: string): boolean {
+  const citizen: string = IDNumber.slice(10, 11);
+  let counter: number = 0;
+  if (citizen === "0") {
+    counter++;
+  } else if (citizen === "1") {
+    counter++;
+  }
+  return counter === 1;
+}
 function ValidateID(IDNumber: string): boolean {
   let counter = 0;
   let date = IDNumber.slice(0, 6);
@@ -52,6 +71,12 @@ function ValidateID(IDNumber: string): boolean {
   if (isValidDate(d, m, y)) {
     counter++;
   }
+  if (isValidGender(IDNumber)) {
+    counter++;
+  }
+  if (valididateCitizenOrResident(IDNumber)) {
+    counter++;
+  }
   if (
     IDNumber[IDNumber.length - 3] === "1" ||
     IDNumber[IDNumber.length - 3] === "0"
@@ -59,7 +84,7 @@ function ValidateID(IDNumber: string): boolean {
     counter++;
   }
 
-  return counter === 4;
+  return counter === 6;
 }
 
 export { ValidateID };
