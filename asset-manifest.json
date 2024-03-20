@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af2499f0.css",
+    "main.js": "/static/js/main.bd75e923.js",
+    "static/js/453.48656eaa.chunk.js": "/static/js/453.48656eaa.chunk.js",
+    "static/media/SAFlag.png": "/static/media/SAFlag.1f6d45c898d8df5c4f07.png",
+    "index.html": "/index.html",
+    "main.af2499f0.css.map": "/static/css/main.af2499f0.css.map",
+    "main.bd75e923.js.map": "/static/js/main.bd75e923.js.map",
+    "453.48656eaa.chunk.js.map": "/static/js/453.48656eaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af2499f0.css",
+    "static/js/main.bd75e923.js"
+  ]
+}
